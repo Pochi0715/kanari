@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <title>
-        かなりさんへ
-    </title>
-    <body>
-        <p>かなりさん可愛い</p>
-        <button onclick="alert('Button clicked!')">Click Me</button>
-        <style>
-            p {
-                font-size: 30px;
-                color: yellow;
+<head>
+    <meta charset="UTF-8">
+    <title>かなりさんへ</title>
+    <style>
+        #message {
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>かなりさんへ</h1>
+    <p>こんにちは！このページはかなりさんのために作成しました！！</p>
+    <button onclick="showMessage()">ボタンを何回か押して下さい！！</button>
+    <p id="message"></p>
+
+    <script>
+        let clickCount = 0;
+
+        function showMessage() {
+            const messageElement = document.getElementById('message');
+            clickCount++;
+            
+            if (clickCount === 1) {
+                messageElement.textContent = "かなりさん可愛い";
+            } else if (clickCount === 2) {
+                messageElement.textContent = "誰？";
+            } else if (clickCount === 3) {
+                messageElement.textContent = "嘘だよ♡";
+            } else if (clickCount === 4) {
+                messageElement.textContent = "これからも頑張ってね！！";
             }
-            button {
-                font-size: 20px;
-                padding: 10px;
-                margin-top: 20px;
-                background-color: blue;
-                color: white;
-                border: none;
-                cursor: pointer;
-            }
-            button:hover {
-                background-color: darkblue;
-            }
-        </style>
-    </body>
+
+            messageElement.style.display = 'block';
+        }
+    </script>
+</body>
 </html>
